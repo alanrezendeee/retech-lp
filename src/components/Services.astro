@@ -1,4 +1,6 @@
 ---
+interface Props { waUrl: string; }
+const { waUrl } = Astro.props;
 const services = [
   {
     icon: `<rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
@@ -99,13 +101,12 @@ const services = [
       ))}
 
       <!-- CTA card -->
-      <div
-        class="bg-[#111111] border-2 border-dashed border-[#1e1e1e] hover:border-[#00FF88]/30 rounded-2xl p-7 flex flex-col items-center justify-center text-center gap-4 transition-colors duration-200 cursor-pointer group fade-in"
-        onclick="document.querySelector('#contato')?.scrollIntoView({behavior:'smooth'})"
-        role="button"
-        tabindex="0"
-        aria-label="Falar sobre seu projeto"
-        onkeydown="if(event.key==='Enter'||event.key===' ')this.click()"
+      <a
+        class="bg-[#111111] border-2 border-dashed border-[#1e1e1e] hover:border-[#00FF88]/30 rounded-2xl p-7 flex flex-col items-center justify-center text-center gap-4 transition-colors duration-200 cursor-pointer group fade-in no-underline"
+        href={waUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar sobre seu projeto no WhatsApp"
       >
         <div class="w-14 h-14 rounded-full border border-[#1e1e1e] group-hover:border-[#00FF88]/30 flex items-center justify-center transition-colors duration-200">
           <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 text-gray-500 group-hover:text-[#00FF88] transition-colors duration-200" aria-hidden="true">
@@ -118,7 +119,7 @@ const services = [
           <p class="text-sm text-gray-400 mt-1">Vamos conversar sobre sua necessidade</p>
         </div>
         <span class="text-sm font-medium text-[#00FF88] group-hover:underline">Falar com especialista →</span>
-      </div>
+      </a>
     </div>
   </div>
 </section>

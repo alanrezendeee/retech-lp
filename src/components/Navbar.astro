@@ -1,4 +1,6 @@
 ---
+interface Props { waUrl: string; }
+const { waUrl } = Astro.props;
 ---
 
 <!-- Announcement bar -->
@@ -44,8 +46,8 @@
     <!-- CTA -->
     <div class="flex items-center gap-3">
       <a
-        href="#contato"
-        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00FF88] text-black font-semibold text-sm hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer"
+        href={waUrl}
+        target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00FF88] text-black font-semibold text-sm hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer"
       >
         Falar com especialista
       </a>
@@ -79,7 +81,7 @@
       <li><a href="#produtos" class="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-[#00FF88] hover:bg-[#00FF88]/5 transition-colors duration-200 cursor-pointer">Produtos</a></li>
       <li><a href="#tecnologias" class="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-[#00FF88] hover:bg-[#00FF88]/5 transition-colors duration-200 cursor-pointer">Tecnologias</a></li>
       <li class="pt-2">
-        <a href="#contato" class="block px-4 py-3 rounded-lg text-sm font-semibold text-center bg-[#00FF88] text-black hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer">
+        <a href={waUrl} target="_blank" rel="noopener noreferrer" class="block px-4 py-3 rounded-lg text-sm font-semibold text-center bg-[#00FF88] text-black hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer">
           Falar com especialista
         </a>
       </li>

@@ -1,4 +1,6 @@
 ---
+interface Props { waUrl: string; }
+const { waUrl } = Astro.props;
 ---
 
 <section id="contato" class="pt-16 pb-24 relative overflow-hidden" aria-labelledby="cta-heading">
@@ -29,7 +31,7 @@
     <!-- CTAs -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 fade-in" style="animation-delay: 0.3s">
       <a
-        href="https://wa.me/55?text=Olá!%20Quero%20falar%20com%20a%20equipe%20da%20The%20Retech"
+        href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
         class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#00FF88] text-black font-bold text-base hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_20px_rgba(0,255,136,0.4)] hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] cursor-pointer btn-shimmer"

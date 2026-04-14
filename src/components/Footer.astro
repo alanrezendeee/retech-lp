@@ -1,4 +1,6 @@
 ---
+interface Props { waUrl: string; }
+const { waUrl } = Astro.props;
 const year = new Date().getFullYear();
 ---
 
@@ -32,7 +34,6 @@ const year = new Date().getFullYear();
         <div class="flex flex-col gap-1.5 text-sm text-gray-600">
           <span>THE RETECH LTDA</span>
           <span>CNPJ: 54.802.231/0001-48</span>
-          <span>Biguaçu — SC, Brasil</span>
         </div>
       </div>
 
@@ -45,10 +46,15 @@ const year = new Date().getFullYear();
             { label: 'Serviços', href: '#servicos' },
             { label: 'Produtos', href: '#produtos' },
             { label: 'Tecnologias', href: '#tecnologias' },
-            { label: 'Contato', href: '#contato' },
+            { label: 'Contato', href: waUrl, external: true },
           ].map(link => (
             <li>
-              <a href={link.href} class="text-sm text-gray-500 hover:text-[#00FF88] transition-colors duration-200 cursor-pointer">
+              <a
+                href={link.href}
+                target={(link as any).external ? '_blank' : undefined}
+                rel={(link as any).external ? 'noopener noreferrer' : undefined}
+                class="text-sm text-gray-500 hover:text-[#00FF88] transition-colors duration-200 cursor-pointer"
+              >
                 {link.label}
               </a>
             </li>
@@ -61,8 +67,8 @@ const year = new Date().getFullYear();
         <h3 class="font-display font-semibold text-xs text-gray-500 mb-4 uppercase tracking-widest">Produtos</h3>
         <ul class="flex flex-col gap-3 list-none" role="list">
           {[
-            { label: 'meun8n', href: '#' },
-            { label: 'meufin', href: '#' },
+            { label: 'meun8n', href: 'https://meun8n.theretech.com.br' },
+            { label: 'meufin', href: 'https://meufin.theretech.com.br' },
             { label: 'core.theretech', href: 'https://core.theretech.com.br' },
             { label: 'CashFlowfy', href: 'https://cashflowfy.com.br' },
           ].map(link => (
@@ -93,10 +99,10 @@ const year = new Date().getFullYear();
       </p>
       <div class="flex items-center gap-1 text-sm text-gray-600">
         <span>Feito com</span>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00FF88" aria-label="dedicação" role="img">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00FF88" aria-label="amor" role="img">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
         </svg>
-        <span>em Biguaçu, SC</span>
+        <span>amor por Alan Rezende</span>
       </div>
     </div>
   </div>

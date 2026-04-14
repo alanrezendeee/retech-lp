@@ -9,6 +9,7 @@ import Products from '../components/Products.astro';
 import Technologies from '../components/Technologies.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+import { waUrl } from '../lib/whatsapp';
 ---
 
 <Layout
@@ -16,15 +17,15 @@ import Footer from '../components/Footer.astro';
   description="A The Retech é uma empresa de tecnologia especializada em desenvolvimento de software, automações com IA e produtos SaaS. Soluções robustas e escaláveis para empresas que precisam ir além do básico."
   canonical="https://theretech.com.br"
 >
-  <Navbar />
+  <Navbar waUrl={waUrl('navbar')} />
   <main id="main-content">
-    <Hero />
+    <Hero waUrl={waUrl('hero')} />
     <About />
     <Differentials />
-    <Services />
+    <Services waUrl={waUrl('servicos')} />
     <Products />
     <Technologies />
-    <CTA />
+    <CTA waUrl={waUrl('cta-final')} />
   </main>
-  <Footer />
+  <Footer waUrl={waUrl('footer')} />
 </Layout>
