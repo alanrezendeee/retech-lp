@@ -1,0 +1,85 @@
+---
+---
+
+<section id="sobre" class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="about-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Foto do fundador (esquerda) -->
+      <div class="fade-in order-2 lg:order-1">
+        <div class="relative">
+          <!-- Glow behind photo -->
+          <div aria-hidden="true" class="absolute -inset-2 rounded-2xl bg-[#00FF88]/5 blur-xl"></div>
+
+          <div class="relative bg-[#111111] border border-[#1e1e1e] rounded-2xl overflow-hidden aspect-[4/5] max-w-sm mx-auto lg:max-w-none">
+            <!-- Foto real -->
+            <img
+              src="/alan.jpeg"
+              alt="Alan Leite de Rezende — Fundador e CEO da The Retech"
+              class="w-full h-full object-cover object-center"
+              loading="eager"
+              decoding="async"
+            />
+
+            <!-- Bottom badge -->
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="bg-[#111111]/90 backdrop-blur-sm border border-[#00FF88]/20 rounded-xl px-4 py-3 flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-[#00FF88] flex items-center justify-center flex-shrink-0">
+                  <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-display font-semibold text-white text-sm">Alan Leite de Rezende</p>
+                  <p class="text-xs text-gray-400">Fundador & CEO</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto (direita) -->
+      <div class="fade-in order-1 lg:order-2">
+        <span class="badge-neon mb-6 inline-flex">Sobre nós</span>
+
+        <h2 id="about-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
+          Tecnologia que vai<br />
+          <span class="neon-text">além do código</span>
+        </h2>
+
+        <p class="text-gray-400 text-lg leading-relaxed mb-6">
+          A <strong class="text-white">The Retech</strong> é uma empresa de tecnologia especializada em
+          desenvolvimento de software, automações inteligentes e produtos SaaS. Liderada por
+          <strong class="text-white">Alan Leite de Rezende</strong>, atua criando soluções robustas e
+          escaláveis para empresas que precisam ir além do básico.
+        </p>
+
+        <p class="text-gray-400 leading-relaxed mb-10">
+          Combinamos arquitetura sólida, inteligência artificial e automação de processos para entregar
+          produtos que escalam com o negócio — não apenas código que funciona, mas soluções que geram resultado.
+        </p>
+
+        <!-- Values -->
+        <ul class="space-y-4 list-none" role="list">
+          {[
+            { label: 'Arquitetura antes de código', desc: 'DDD, microservices e design patterns desde o início' },
+            { label: 'IA como ferramenta, não buzzword', desc: 'Automação real com agents, LLMs e workflows' },
+            { label: 'Entrega com engenharia', desc: 'CI/CD, observabilidade e performance no núcleo' },
+          ].map(item => (
+            <li class="flex items-start gap-3">
+              <svg viewBox="0 0 20 20" fill="none" class="w-5 h-5 shrink-0 mt-0.5" aria-hidden="true">
+                <path d="M7 10l2.5 2.5L14 7" stroke="#00FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="10" cy="10" r="8.5" stroke="#00FF88" stroke-width="1"/>
+              </svg>
+              <div>
+                <p class="font-medium text-white">{item.label}</p>
+                <p class="text-sm text-gray-400">{item.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

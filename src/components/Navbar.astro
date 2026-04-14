@@ -1,0 +1,132 @@
+---
+---
+
+<!-- Announcement bar -->
+<div id="announcement-bar" class="fixed top-0 left-0 right-0 z-[60] h-10 flex items-center justify-center bg-[#00FF88]/10 border-b border-[#00FF88]/20 px-8 text-sm font-medium text-[#00FF88]">
+  <span>
+    <svg viewBox="0 0 20 20" fill="none" class="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" aria-hidden="true">
+      <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <strong>Software escalável</strong> — da arquitetura ao produto final.
+    <a href="#servicos" class="underline underline-offset-2 hover:text-white transition-colors cursor-pointer ml-1">Ver serviços</a>
+  </span>
+  <button id="dismiss-bar" aria-label="Fechar aviso" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00FF88]/50 hover:text-[#00FF88] transition-colors cursor-pointer">
+    <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
+      <path d="M6 6l8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+  </button>
+</div>
+
+<!-- Navbar -->
+<header id="site-header" class="fixed top-10 left-0 right-0 z-50 navbar-inner backdrop-blur-md bg-[#0a0a0a]/80 transition-[top] duration-300">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+
+    <!-- Logo -->
+    <a href="/" aria-label="The Retech - Início" class="flex items-center gap-2 cursor-pointer">
+      <div class="w-8 h-8 rounded-lg bg-[#00FF88] flex items-center justify-center flex-shrink-0">
+        <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="font-display font-bold text-lg tracking-tight text-white">
+        The<span class="neon-text">Retech</span>
+      </span>
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Navegação principal">
+      <a href="#sobre" class="font-display font-medium text-[15px] text-gray-400 hover:text-white transition-all duration-200 cursor-pointer">Sobre</a>
+      <a href="#servicos" class="font-display font-medium text-[15px] text-gray-400 hover:text-white transition-all duration-200 cursor-pointer">Serviços</a>
+      <a href="#produtos" class="font-display font-medium text-[15px] text-gray-400 hover:text-white transition-all duration-200 cursor-pointer">Produtos</a>
+      <a href="#tecnologias" class="font-display font-medium text-[15px] text-gray-400 hover:text-white transition-all duration-200 cursor-pointer">Tecnologias</a>
+    </nav>
+
+    <!-- CTA -->
+    <div class="flex items-center gap-3">
+      <a
+        href="#contato"
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#00FF88] text-black font-semibold text-sm hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer"
+      >
+        Falar com especialista
+      </a>
+
+      <!-- Mobile menu btn -->
+      <button
+        id="menu-btn"
+        class="md:hidden p-2 rounded-lg text-gray-400 hover:text-[#00FF88] hover:bg-[#00FF88]/10 transition-colors duration-200 cursor-pointer"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg id="icon-open" width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg id="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" class="hidden" aria-hidden="true">
+          <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Neon divider base do header -->
+  <div class="neon-line" aria-hidden="true"></div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a]/97 border-t border-[#1e1e1e]" role="navigation">
+    <ul class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1 list-none" role="list">
+      <li><a href="#sobre" class="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-[#00FF88] hover:bg-[#00FF88]/5 transition-colors duration-200 cursor-pointer">Sobre</a></li>
+      <li><a href="#servicos" class="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-[#00FF88] hover:bg-[#00FF88]/5 transition-colors duration-200 cursor-pointer">Serviços</a></li>
+      <li><a href="#produtos" class="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-[#00FF88] hover:bg-[#00FF88]/5 transition-colors duration-200 cursor-pointer">Produtos</a></li>
+      <li><a href="#tecnologias" class="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:text-[#00FF88] hover:bg-[#00FF88]/5 transition-colors duration-200 cursor-pointer">Tecnologias</a></li>
+      <li class="pt-2">
+        <a href="#contato" class="block px-4 py-3 rounded-lg text-sm font-semibold text-center bg-[#00FF88] text-black hover:bg-[#00cc6a] transition-colors duration-200 cursor-pointer">
+          Falar com especialista
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('site-header');
+  const bar = document.getElementById('announcement-bar');
+  const dismissBtn = document.getElementById('dismiss-bar');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  // Scroll: add scrolled class
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar-inner');
+    if (window.scrollY > 20) {
+      navbar?.classList.add('scrolled');
+    } else {
+      navbar?.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // Dismiss announcement bar
+  dismissBtn?.addEventListener('click', () => {
+    bar?.classList.add('hidden');
+    if (header) header.style.top = '0';
+  });
+
+  // Mobile menu toggle
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = !mobileMenu?.classList.contains('hidden');
+    mobileMenu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

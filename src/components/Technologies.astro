@@ -1,0 +1,87 @@
+---
+const techStack = [
+  { name: 'Node.js', color: '#539E43' },
+  { name: 'TypeScript', color: '#3178C6' },
+  { name: 'React', color: '#61DAFB' },
+  { name: 'PostgreSQL', color: '#336791' },
+  { name: 'Docker', color: '#2496ED' },
+  { name: 'AWS', color: '#FF9900' },
+  { name: 'Redis', color: '#D82C20' },
+  { name: 'n8n', color: '#EA4B71' },
+  { name: 'Kubernetes', color: '#326CE5' },
+];
+---
+
+<section id="tecnologias" class="pt-16 pb-24 bg-[#0d0d0d]" aria-labelledby="tech-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- Header -->
+    <div class="text-center max-w-2xl mx-auto mb-14 fade-in">
+      <span class="badge-neon mb-4 inline-flex">Stack técnica</span>
+      <h2 id="tech-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+        Construído com tecnologias<br />
+        <span class="neon-text">modernas e comprovadas</span>
+      </h2>
+      <p class="text-gray-400 text-lg">
+        Arquitetura de alta performance usando as ferramentas certas para cada desafio.
+      </p>
+    </div>
+
+    <!-- Tech grid -->
+    <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-4 mb-16 fade-in">
+      {techStack.map(tech => (
+        <div
+          class="bg-[#111111] border border-[#1e1e1e] rounded-xl p-4 flex flex-col items-center gap-2 card-hover cursor-default"
+          title={tech.name}
+        >
+          <div
+            class="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold font-display"
+            style={`background-color: ${tech.color}18; color: ${tech.color};`}
+          >
+            {tech.name.slice(0, 2).toUpperCase()}
+          </div>
+          <span class="text-xs text-gray-500 font-medium text-center leading-tight">{tech.name}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Architecture pillars -->
+    <div class="grid sm:grid-cols-3 gap-6 fade-in">
+      {[
+        {
+          icon: `<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+          title: 'Segurança por padrão',
+          desc: 'Auth, RBAC, secrets management e auditoria integrados desde o início.',
+          color: 'text-[#00FF88]',
+          bg: 'bg-[#00FF88]/10 border-[#00FF88]/20',
+        },
+        {
+          icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+          title: 'Observabilidade total',
+          desc: 'Logs estruturados, traces distribuídos e métricas em tempo real.',
+          color: 'text-blue-400',
+          bg: 'bg-blue-500/10 border-blue-500/20',
+        },
+        {
+          icon: `<path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="1.5"/><polyline points="13 2 13 9 20 9" stroke="currentColor" stroke-width="1.5"/>`,
+          title: 'CI/CD automatizado',
+          desc: 'Pipelines de deploy contínuo com testes automatizados e rollback.',
+          color: 'text-amber-400',
+          bg: 'bg-amber-500/10 border-amber-500/20',
+        },
+      ].map(pillar => (
+        <div class="bg-[#111111] border border-[#1e1e1e] rounded-2xl p-6 flex gap-4 items-start card-hover">
+          <div class={`w-11 h-11 rounded-xl border flex items-center justify-center flex-shrink-0 ${pillar.bg}`}>
+            <svg viewBox="0 0 24 24" fill="none" class={`w-5 h-5 ${pillar.color}`} aria-hidden="true">
+              <Fragment set:html={pillar.icon} />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-display font-semibold text-white text-base mb-1">{pillar.title}</h3>
+            <p class="text-sm text-gray-400 leading-relaxed">{pillar.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

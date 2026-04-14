@@ -1,0 +1,113 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'The Retech — Software Sob Medida, IA e Automação',
+  description = 'A The Retech é uma empresa de tecnologia especializada em desenvolvimento de software, automações com IA e produtos SaaS. Soluções robustas e escaláveis para empresas que precisam ir além do básico.',
+  canonical = 'https://theretech.com.br',
+  ogImage = 'https://theretech.com.br/og-image.png',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#00FF88" />
+
+    <!-- Fonts: Space Grotesk + Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="The Retech LTDA" />
+    <meta name="keywords" content="software sob medida, automação com IA, desenvolvimento de sistemas, SaaS, arquitetura de software, Biguaçu SC, The Retech" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="The Retech" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Schema.org Organization + LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://theretech.com.br/#organization",
+            "name": "THE RETECH LTDA",
+            "alternateName": "The Retech",
+            "url": "https://theretech.com.br",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://theretech.com.br/logo.png"
+            },
+            "description": "Empresa de tecnologia especializada em desenvolvimento de software, automações inteligentes e produtos SaaS.",
+            "foundingDate": "2024",
+            "founder": {
+              "@type": "Person",
+              "name": "Alan Leite de Rezende"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "sales",
+              "availableLanguage": "Portuguese"
+            },
+            "sameAs": []
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://theretech.com.br/#localbusiness",
+            "name": "THE RETECH LTDA",
+            "description": "Empresa de tecnologia especializada em desenvolvimento de software, automações inteligentes e produtos SaaS.",
+            "url": "https://theretech.com.br",
+            "taxID": "54.802.231/0001-48",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Biguaçu",
+              "addressRegion": "SC",
+              "addressCountry": "BR"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "-27.4958",
+              "longitude": "-48.6561"
+            },
+            "priceRange": "$$",
+            "servesCuisine": null
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

@@ -1,0 +1,138 @@
+---
+const products = [
+  {
+    name: 'meun8n',
+    tagline: 'Automação empresarial pronta para uso',
+    desc: 'Plataforma de automação baseada em n8n pronta para uso empresarial. Infraestrutura gerenciada, workflows ilimitados e suporte especializado.',
+    href: '#',
+    color: 'text-[#00FF88]',
+    borderAccent: 'border-[#00FF88]/25',
+    bgAccent: 'bg-[#00FF88]/5',
+    iconBg: 'bg-[#00FF88]/10 border-[#00FF88]/20',
+    badge: 'Automação',
+    icon: `<path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" stroke="currentColor" stroke-width="1.5"/><polyline points="13 2 13 9 20 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+    featured: false,
+  },
+  {
+    name: 'meufin',
+    tagline: 'Finanças familiares inteligentes',
+    desc: 'Sistema financeiro familiar inteligente com visão de fluxo de caixa, categorização automática e relatórios que fazem sentido.',
+    href: '#',
+    color: 'text-blue-400',
+    borderAccent: 'border-blue-500/25',
+    bgAccent: 'bg-blue-500/5',
+    iconBg: 'bg-blue-500/10 border-blue-500/20',
+    badge: 'SaaS · Finanças',
+    icon: `<line x1="12" y1="1" x2="12" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+    featured: true,
+  },
+  {
+    name: 'core.theretech',
+    tagline: 'API de dados brasileiros',
+    desc: 'API de dados brasileiros pronta para integração. Consulta de empresas, documentos e dados públicos com alta disponibilidade e baixa latência.',
+    href: 'https://core.theretech.com.br',
+    color: 'text-purple-400',
+    borderAccent: 'border-purple-500/25',
+    bgAccent: 'bg-purple-500/5',
+    iconBg: 'bg-purple-500/10 border-purple-500/20',
+    badge: 'API · Dados',
+    icon: `<ellipse cx="12" cy="5" rx="9" ry="3" stroke="currentColor" stroke-width="1.5"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" stroke="currentColor" stroke-width="1.5"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" stroke="currentColor" stroke-width="1.5"/>`,
+    featured: false,
+  },
+  {
+    name: 'CashFlowfy',
+    tagline: 'BPO Financeiro como serviço',
+    desc: 'BPO Financeiro como serviço com tecnologia, automação e inteligência. Terceirize seu financeiro com uma equipe que usa tecnologia de ponta.',
+    href: 'https://cashflowfy.com.br',
+    color: 'text-amber-400',
+    borderAccent: 'border-amber-500/25',
+    bgAccent: 'bg-amber-500/5',
+    iconBg: 'bg-amber-500/10 border-amber-500/20',
+    badge: 'BPO · Fintech',
+    icon: `<path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    featured: false,
+  },
+];
+---
+
+<section id="produtos" class="pt-16 pb-24" aria-labelledby="products-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-14 fade-in">
+      <span class="badge-neon mb-4 inline-flex">Produtos</span>
+      <h2 id="products-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+        Portfólio de produtos <span class="neon-text">SaaS</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Soluções que construímos e operamos — para provar que fazemos o que pregamos.
+      </p>
+    </div>
+
+    <!-- Products grid -->
+    <div class="grid md:grid-cols-2 gap-6">
+      {products.map((p, i) => (
+        <div
+          class={`bg-[#111111] border rounded-2xl overflow-hidden card-hover fade-in relative ${p.featured ? `${p.borderAccent} ${p.bgAccent}` : 'border-[#1e1e1e]'}`}
+          style={`animation-delay: ${i * 0.1}s`}
+        >
+          {p.featured && (
+            <div class="absolute top-4 right-4 z-10">
+              <span class={`text-[10px] font-semibold ${p.color} bg-blue-500/10 border border-blue-500/20 px-2 py-1 rounded-full uppercase tracking-wider`}>
+                Destaque
+              </span>
+            </div>
+          )}
+
+          <!-- Top accent line -->
+          <div
+            class="h-px w-full"
+            style={`background: linear-gradient(90deg, transparent, currentColor, transparent);`}
+            aria-hidden="true"
+          ></div>
+
+          <div class="p-7">
+            <div class="flex items-start gap-4 mb-5">
+              <div class={`w-12 h-12 rounded-xl border flex items-center justify-center flex-shrink-0 ${p.iconBg}`}>
+                <svg viewBox="0 0 24 24" fill="none" class={`w-6 h-6 ${p.color}`} aria-hidden="true">
+                  <Fragment set:html={p.icon} />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-3 flex-wrap mb-1">
+                  <h3 class="font-display font-bold text-xl text-white">{p.name}</h3>
+                  <span class={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium border ${p.iconBg} ${p.color}`}>
+                    {p.badge}
+                  </span>
+                </div>
+                <p class={`text-sm font-medium ${p.color}`}>{p.tagline}</p>
+              </div>
+            </div>
+
+            <p class="text-gray-400 text-sm leading-relaxed mb-6">{p.desc}</p>
+
+            <a
+              href={p.href}
+              target={p.href.startsWith('http') ? '_blank' : undefined}
+              rel={p.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class={`inline-flex items-center gap-2 text-sm font-medium transition-all duration-200 cursor-pointer hover:gap-3 ${p.color}`}
+              aria-label={`Conhecer ${p.name}`}
+            >
+              {p.href.startsWith('http') ? 'Acessar produto' : 'Em breve'}
+              <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4" aria-hidden="true">
+                {p.href.startsWith('http')
+                  ? `<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`
+                  : `<path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`
+                }
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <p class="text-center text-sm text-gray-600 mt-8">
+      Mais produtos em desenvolvimento. Acompanhe nossas novidades.
+    </p>
+  </div>
+</section>

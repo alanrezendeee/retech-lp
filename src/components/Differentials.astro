@@ -1,0 +1,108 @@
+---
+const cards = [
+  {
+    icon: `<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    title: 'Arquitetura Escalável',
+    desc: 'DDD, microservices e design patterns que sustentam crescimento. Sistemas construídos para durar.',
+    features: ['Domain-Driven Design', 'Microservices', 'Event-driven', 'Clean Architecture'],
+    color: 'text-blue-400',
+    bg: 'bg-blue-500/10 border-blue-500/20',
+  },
+  {
+    icon: `<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    title: 'Automação com IA',
+    desc: 'Agents, LLMs, n8n e workflows inteligentes. Automatizamos o que consome tempo e trava o crescimento.',
+    features: ['LLM Agents', 'n8n workflows', 'OpenAI / Anthropic', 'Processamento docs'],
+    color: 'text-[#00FF88]',
+    bg: 'bg-[#00FF88]/10 border-[#00FF88]/20',
+    featured: true,
+  },
+  {
+    icon: `<polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    title: 'Performance e Observabilidade',
+    desc: 'Métricas, traces e alertas integrados. Produtos rápidos por padrão, com visibilidade total em produção.',
+    features: ['Distributed tracing', 'Métricas em tempo real', 'Alertas proativos', 'SLO / SLA'],
+    color: 'text-amber-400',
+    bg: 'bg-amber-500/10 border-amber-500/20',
+  },
+  {
+    icon: `<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+    title: 'Time Técnico Sênior',
+    desc: 'Profissionais com experiência real em produtos de escala. Sem júnior assumindo decisões críticas.',
+    features: ['Revisão de código rigorosa', 'Decisões arquiteturais', 'Mentoria técnica', 'Roadmap de engenharia'],
+    color: 'text-purple-400',
+    bg: 'bg-purple-500/10 border-purple-500/20',
+  },
+  {
+    icon: `<path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    title: 'Foco em Negócio',
+    desc: 'Entendemos o problema antes de escrever código. Tecnologia como meio, resultado como objetivo.',
+    features: ['Discovery técnico', 'Estimativas reais', 'MVP estratégico', 'Iteração rápida'],
+    color: 'text-pink-400',
+    bg: 'bg-pink-500/10 border-pink-500/20',
+  },
+  {
+    icon: `<path d="M18 20V10M12 20V4M6 20v-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>`,
+    title: 'Integrações Complexas',
+    desc: 'APIs, ERPs, sistemas legados, bancos de dados heterogêneos. Conectamos o que precisa ser conectado.',
+    features: ['REST / GraphQL / gRPC', 'ERPs e CRMs', 'Sistemas legados', 'Webhooks e eventos'],
+    color: 'text-teal-400',
+    bg: 'bg-teal-500/10 border-teal-500/20',
+  },
+];
+---
+
+<section id="diferenciais" class="pt-16 pb-24" aria-labelledby="diffs-heading">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-16 fade-in">
+      <span class="badge-neon mb-4 inline-flex">Por que somos diferentes</span>
+      <h2 id="diffs-heading" class="font-display font-bold text-3xl sm:text-4xl md:text-5xl leading-tight mb-4">
+        6 diferenciais que nenhum<br />
+        <span class="neon-text">freelancer tem junto</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Profundidade técnica e visão de negócio — a combinação que transforma software em vantagem competitiva.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+      {cards.map((card, i) => (
+        <div
+          class={`bg-[#111111] border rounded-2xl p-8 card-hover fade-in relative overflow-hidden ${card.featured ? 'border-[#00FF88]/25 bg-[#00FF88]/5' : 'border-[#1e1e1e]'}`}
+          role="listitem"
+          style={`animation-delay: ${i * 0.08}s`}
+        >
+          {card.featured && (
+            <div class="absolute top-4 right-4">
+              <span class="text-[10px] font-semibold text-[#00FF88] bg-[#00FF88]/10 border border-[#00FF88]/20 px-2 py-1 rounded-full uppercase tracking-wider">
+                Destaque
+              </span>
+            </div>
+          )}
+
+          <!-- Icon -->
+          <div class={`w-12 h-12 rounded-xl border flex items-center justify-center mb-6 ${card.bg}`}>
+            <svg viewBox="0 0 24 24" fill="none" class={`w-6 h-6 ${card.color}`} aria-hidden="true">
+              <Fragment set:html={card.icon} />
+            </svg>
+          </div>
+
+          <h3 class="font-display font-bold text-xl text-white mb-3">{card.title}</h3>
+          <p class="text-gray-400 text-sm leading-relaxed mb-6">{card.desc}</p>
+
+          <ul class="space-y-2" role="list">
+            {card.features.map(f => (
+              <li class={`flex items-center gap-2 text-sm text-gray-400`}>
+                <span class={`w-1.5 h-1.5 rounded-full shrink-0 ${card.color.replace('text-', 'bg-')}`} aria-hidden="true"></span>
+                {f}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

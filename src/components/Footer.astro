@@ -1,0 +1,103 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-[#0a0a0a] border-t border-[#1e1e1e]" aria-label="Rodapé">
+
+  <!-- Neon top line -->
+  <div class="neon-line" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+    <!-- Main -->
+    <div class="py-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-2 mb-4 cursor-pointer" aria-label="The Retech - início">
+          <div class="w-8 h-8 rounded-lg bg-[#00FF88] flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span class="font-display font-bold text-lg tracking-tight text-white">
+            The<span class="neon-text">Retech</span>
+          </span>
+        </a>
+
+        <p class="text-gray-500 text-sm leading-relaxed max-w-xs mb-6">
+          Software sob medida, automação com IA e produtos SaaS para empresas que precisam ir além do básico.
+        </p>
+
+        <div class="flex flex-col gap-1.5 text-sm text-gray-600">
+          <span>THE RETECH LTDA</span>
+          <span>CNPJ: 54.802.231/0001-48</span>
+          <span>Biguaçu — SC, Brasil</span>
+        </div>
+      </div>
+
+      <!-- Empresa -->
+      <div>
+        <h3 class="font-display font-semibold text-xs text-gray-500 mb-4 uppercase tracking-widest">Empresa</h3>
+        <ul class="flex flex-col gap-3 list-none" role="list">
+          {[
+            { label: 'Sobre nós', href: '#sobre' },
+            { label: 'Serviços', href: '#servicos' },
+            { label: 'Produtos', href: '#produtos' },
+            { label: 'Tecnologias', href: '#tecnologias' },
+            { label: 'Contato', href: '#contato' },
+          ].map(link => (
+            <li>
+              <a href={link.href} class="text-sm text-gray-500 hover:text-[#00FF88] transition-colors duration-200 cursor-pointer">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Produtos -->
+      <div>
+        <h3 class="font-display font-semibold text-xs text-gray-500 mb-4 uppercase tracking-widest">Produtos</h3>
+        <ul class="flex flex-col gap-3 list-none" role="list">
+          {[
+            { label: 'meun8n', href: '#' },
+            { label: 'meufin', href: '#' },
+            { label: 'core.theretech', href: 'https://core.theretech.com.br' },
+            { label: 'CashFlowfy', href: 'https://cashflowfy.com.br' },
+          ].map(link => (
+            <li>
+              <a
+                href={link.href}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                class="text-sm text-gray-500 hover:text-[#00FF88] transition-colors duration-200 cursor-pointer"
+              >
+                {link.label}
+                {link.href.startsWith('http') && (
+                  <svg class="inline ml-1 mb-0.5" width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-[#1e1e1e] py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-600">
+        © {year} The Retech LTDA. Todos os direitos reservados.
+      </p>
+      <div class="flex items-center gap-1 text-sm text-gray-600">
+        <span>Feito com</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="#00FF88" aria-label="dedicação" role="img">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <span>em Biguaçu, SC</span>
+      </div>
+    </div>
+  </div>
+</footer>

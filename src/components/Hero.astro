@@ -1,0 +1,143 @@
+---
+---
+
+<section
+  class="relative min-h-screen flex items-center pt-[104px] hero-glow grid-bg overflow-hidden"
+  aria-labelledby="hero-heading"
+>
+  <!-- Decorative blob -->
+  <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#00FF88]/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center w-full">
+
+    <!-- Badge -->
+    <div class="flex justify-center mb-6 fade-in">
+      <span class="badge-neon">
+        <svg viewBox="0 0 24 24" fill="none" class="w-3.5 h-3.5" aria-hidden="true">
+          <circle cx="12" cy="12" r="3" fill="#00FF88"/>
+          <circle cx="12" cy="12" r="7" stroke="#00FF88" stroke-width="1.5" fill="none"/>
+        </svg>
+        Software · IA · Automação · SaaS
+      </span>
+    </div>
+
+    <!-- H1 -->
+    <h1
+      id="hero-heading"
+      class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mb-6 fade-in"
+      style="animation-delay: 0.1s"
+    >
+      Transformamos ideias em<br />
+      <span class="neon-text">software escalável.</span>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="text-gray-400 text-lg sm:text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed mb-8 fade-in" style="animation-delay: 0.2s">
+      IA, automação e engenharia de alto nível.<br class="hidden sm:block" />
+      Da arquitetura ao produto final — <strong class="text-white">soluções reais que geram resultado.</strong>
+    </p>
+
+    <!-- Bullets -->
+    <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10 text-sm text-gray-400 fade-in" style="animation-delay: 0.3s" aria-label="Principais diferenciais">
+      {[
+        'Arquitetura escalável desde o início',
+        'Automação com IA e agents',
+        'Time técnico sênior',
+        'Produtos SaaS próprios',
+        'Integrações complexas',
+      ].map((item) => (
+        <li class="flex items-center gap-2">
+          <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4 shrink-0" aria-hidden="true">
+            <path d="M7 10l2.5 2.5L14 7" stroke="#00FF88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="10" cy="10" r="8.5" stroke="#00FF88" stroke-width="1"/>
+          </svg>
+          {item}
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 fade-in" style="animation-delay: 0.4s">
+      <a
+        href="#contato"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-[#00FF88] text-black font-bold text-base hover:bg-[#00cc6a] transition-all duration-200 shadow-[0_0_20px_rgba(0,255,136,0.4)] hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] cursor-pointer btn-shimmer"
+      >
+        <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5" aria-hidden="true">
+          <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 2L15 22 11 13 2 9l20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Falar com especialista
+      </a>
+      <a
+        href="#produtos"
+        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl border border-[#2a2a2a] text-gray-300 font-medium text-base hover:border-[#00FF88]/40 hover:text-white transition-all duration-200 cursor-pointer"
+      >
+        Conhecer produtos
+        <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
+          <path d="M10 4v12M4 10l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Stats -->
+    <div
+      class="mt-16 grid grid-cols-3 gap-4 max-w-md mx-auto border border-[#1e1e1e] rounded-2xl p-4 bg-[#111111]/50 fade-in"
+      style="animation-delay: 0.5s"
+      aria-label="Estatísticas"
+    >
+      {[
+        { value: '4+', label: 'Produtos SaaS' },
+        { value: 'Senior', label: 'Time técnico' },
+        { value: '100%', label: 'Foco resultado' },
+      ].map((stat) => (
+        <div class="text-center">
+          <div class="font-display font-bold text-2xl neon-text">{stat.value}</div>
+          <div class="text-gray-500 text-xs mt-0.5">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Ticker marquee -->
+<div class="ticker-wrap py-3.5 border-y border-[#00FF88]/15 bg-[#00FF88]/[0.04] overflow-hidden" aria-hidden="true">
+  <div class="ticker-track">
+    {[
+      'Software sob medida',
+      'Automação com IA',
+      'Arquitetura escalável',
+      'Produtos SaaS próprios',
+      'Time técnico sênior',
+      'Integrações complexas',
+      'DDD e microservices',
+      'Observabilidade total',
+      'Software sob medida',
+      'Automação com IA',
+      'Arquitetura escalável',
+      'Produtos SaaS próprios',
+      'Time técnico sênior',
+      'Integrações complexas',
+      'DDD e microservices',
+      'Observabilidade total',
+    ].map((item) => (
+      <span class="inline-flex items-center gap-3 px-8 text-sm font-medium text-[#00FF88]/70 whitespace-nowrap shrink-0">
+        <span class="text-[#00FF88]/40 text-xs">✦</span>
+        {item}
+      </span>
+    ))}
+  </div>
+</div>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>

@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Differentials from '../components/Differentials.astro';
+import Services from '../components/Services.astro';
+import Products from '../components/Products.astro';
+import Technologies from '../components/Technologies.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="The Retech — Software Sob Medida, IA e Automação"
+  description="A The Retech é uma empresa de tecnologia especializada em desenvolvimento de software, automações com IA e produtos SaaS. Soluções robustas e escaláveis para empresas que precisam ir além do básico."
+  canonical="https://theretech.com.br"
+>
+  <Navbar />
+  <main id="main-content">
+    <Hero />
+    <About />
+    <Differentials />
+    <Services />
+    <Products />
+    <Technologies />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
