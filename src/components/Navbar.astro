@@ -3,24 +3,8 @@ interface Props { waUrl: string; }
 const { waUrl } = Astro.props;
 ---
 
-<!-- Announcement bar -->
-<div id="announcement-bar" class="fixed top-0 left-0 right-0 z-[60] h-10 flex items-center justify-center bg-[#00FF88]/10 border-b border-[#00FF88]/20 px-8 text-sm font-medium text-[#00FF88]">
-  <span>
-    <svg viewBox="0 0 20 20" fill="none" class="w-3.5 h-3.5 inline mr-1.5 -mt-0.5" aria-hidden="true">
-      <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-    <strong>Software escalável</strong> — da arquitetura ao produto final.
-    <a href="#servicos" class="underline underline-offset-2 hover:text-white transition-colors cursor-pointer ml-1">Ver serviços</a>
-  </span>
-  <button id="dismiss-bar" aria-label="Fechar aviso" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#00FF88]/50 hover:text-[#00FF88] transition-colors cursor-pointer">
-    <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4" aria-hidden="true">
-      <path d="M6 6l8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-    </svg>
-  </button>
-</div>
-
 <!-- Navbar -->
-<header id="site-header" class="fixed top-10 left-0 right-0 z-50 navbar-inner backdrop-blur-md bg-[#0a0a0a]/80 transition-[top] duration-300">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 navbar-inner backdrop-blur-md bg-[#0a0a0a]/80">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
     <!-- Logo -->
@@ -90,9 +74,6 @@ const { waUrl } = Astro.props;
 </header>
 
 <script>
-  const header = document.getElementById('site-header');
-  const bar = document.getElementById('announcement-bar');
-  const dismissBtn = document.getElementById('dismiss-bar');
   const menuBtn = document.getElementById('menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('icon-open');
@@ -107,12 +88,6 @@ const { waUrl } = Astro.props;
       navbar?.classList.remove('scrolled');
     }
   }, { passive: true });
-
-  // Dismiss announcement bar
-  dismissBtn?.addEventListener('click', () => {
-    bar?.classList.add('hidden');
-    if (header) header.style.top = '0';
-  });
 
   // Mobile menu toggle
   menuBtn?.addEventListener('click', () => {
