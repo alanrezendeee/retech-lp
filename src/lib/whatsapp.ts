@@ -1,4 +1,10 @@
-import { WHATSAPP_NUMBER } from 'astro:env/server';
+// PUBLIC_WHATSAPP_NUMBER é obrigatória — defina no .env e no painel do Railway.
+// Formato: código país + DDD + número, sem espaços. Ex: 5548999999999
+const number = import.meta.env.PUBLIC_WHATSAPP_NUMBER as string | undefined;
+
+if (!number) {
+  console.warn('[whatsapp] PUBLIC_WHATSAPP_NUMBER não está definida. CTAs apontarão para wa.me sem número.');
+}
 
 type CtaSource =
   | 'navbar'
@@ -30,6 +36,7 @@ const messages: Record<CtaSource, string> = {
 };
 
 export function waUrl(source: CtaSource): string {
+  const base = number ? `https://wa.me/${number}` : 'https://wa.me/';
   const msg = messages[source];
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+  return `${base}?text=${encodeURIComponent(msg)}`;
 }
