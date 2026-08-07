@@ -81,3 +81,49 @@ Encaixar; gota de cola instantânea nas peças pequenas se quiser garantia.
 ícone convertido de stroke para contorno preenchido. Pipeline em
 `build_logo.py` / `build_logo_3d_fit.py` (sessão Claude Code — pedir
 regeneração para outros tamanhos/folgas).*
+
+---
+
+# v2 — Letreiro neon 88 cm (produção)
+
+Arte aprovada: pulso → anel neon com camadas → **TheRetech** sólido.
+Placa **880 × 190 mm** em 4 segmentos; badge 130 mm; letras cap 79 mm;
+linhas neon 5 mm; fosso 2 mm. POC validou: luz pelo piso verde ✔, fosso ✔,
+sanduíche AMS ✔. Espelhamento do eixo Y **corrigido** nestes arquivos.
+
+## Arquivos (`3d-letreiro/`)
+
+- `segmento-{1..4}-piso.stl` (**verde**, difusor sólido) + `segmento-{1..4}-corpo.stl` (**preto**)
+  — importar o PAR de cada segmento junto → "single object with multiple parts" → Yes
+- `letra-{T,h,e,R,t,c}.stl` (**verde**) — quantidades: T×1 h×2 e×3 R×1 t×1 c×1
+- `gabaritos-2mm.stl` — 8 barrinhas da largura exata do fosso, para centralizar na colagem
+
+## Ordem de impressão (4 fornadas de segmento + 1 de letras)
+
+1. Segmento 1 (pulso + anel + camadas) — par piso+corpo, verde+preto
+2. Segmentos 2, 3, 4 — idem
+3. Letras: todas num prato só, verde, **com as duplicatas** (clonar h×2, e×3)
+
+## Ajustes no slicer (importantes)
+
+- **Letras: infill 100%** (clicar no objeto → Objects → Sparse infill 100%) —
+  a POC mostrou o infill de 15% aparecendo na luz como xadrez
+- Letras já saem "espelhadas" na mesa DE PROPÓSITO: a face contra a chapa é a
+  face visível; desviram ao colar. NÃO espelhar de novo.
+- Pisos e corpos: perfil padrão 0.2 mm serve
+
+## Montagem
+
+1. Encaixar os dentes das emendas (cola instantânea nas faces de contato)
+2. Colar as letras: gabaritos de 2 mm apoiados no contorno da cavidade →
+   letra ao centro → cola no piso → remover gabaritos. Letras que cruzam
+   emendas ajudam a travar os segmentos.
+3. LED: fita **COB** (branca fria/neutra ou verde) em serpentina atrás da
+   placa, cobrindo anel, pulso e a faixa das letras; espaçadores de 15-20 mm
+   até a parede; fonte 12/24 V conforme a fita
+4. Fixação: parafusos pelos cantos ou fita VHB nos espaçadores
+
+## Pendências
+
+- [ ] Furos de fixação embutidos (pedir se quiser — regeneração rápida)
+- [ ] Validar encaixe dos dentes no primeiro par de segmentos impressos
